@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Estudante implements Comparable<Estudante> {
+public class Estudante implements IPerson<Estudante> {
 
     private  final String nome;
 
@@ -10,12 +10,6 @@ public class Estudante implements Comparable<Estudante> {
 
     public String getNome() {
         return nome;
-    }
-
-    @Override
-    public int compareTo(Estudante estudante) {
-        //return 0;
-        return this.hashCode() - estudante.hashCode();
     }
 
     @Override
@@ -34,5 +28,15 @@ public class Estudante implements Comparable<Estudante> {
     @Override
     public int hashCode() {
         return Objects.hash(nome);
+    }
+
+    @Override
+    public int nomeHash() {
+        return hashCode();
+    }
+
+    @Override
+    public int compareTo(IPerson<Estudante> estudanteIPerson) {
+        return estudanteIPerson.hashCode() - this.hashCode();
     }
 }

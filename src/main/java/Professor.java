@@ -1,7 +1,7 @@
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Professor implements Comparator {
+public class Professor implements IPerson<Professor> {
 
     private final String Nome;
 
@@ -13,7 +13,6 @@ public class Professor implements Comparator {
         return Nome;
     }
 
-    @Override
     public int compare(Object o, Object t1) {
         return o.hashCode() - t1.hashCode();
     }
@@ -34,5 +33,15 @@ public class Professor implements Comparator {
     @Override
     public int hashCode() {
         return Objects.hash(Nome);
+    }
+
+    @Override
+    public int nomeHash() {
+        return hashCode();
+    }
+
+    @Override
+    public int compareTo(IPerson<Professor> professorIPerson) {
+        return 0;
     }
 }
