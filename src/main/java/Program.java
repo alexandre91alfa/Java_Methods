@@ -12,8 +12,14 @@ public class Program {
             estudantes.add(new Professor("Lana"));
 
             System.out.println(estudantes);
-
+            //sort com interface comparator
             estudantes.sort((f,s) -> s.getNome().hashCode() - f.getNome().hashCode());
+
+            System.out.println(estudantes);
+
+            //reverse com interface comparator
+
+            estudantes.sort((f,s) -> f.getNome().hashCode() - s.getNome().hashCode());
 
             System.out.println(estudantes);
 
