@@ -1,0 +1,5 @@
+Solid
+
+Single responsibility - classe deve ter uma unica responsabilidade.
+
+Open closed - extender a classe mas não alterar.
