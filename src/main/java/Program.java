@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Program {
@@ -13,13 +14,11 @@ public class Program {
 
             System.out.println(estudantes);
             //sort com interface comparator
-            estudantes.sort((f,s) -> s.getNome().hashCode() - f.getNome().hashCode());
+            estudantes.sort(Comparator.comparingInt(Professor::hashCode).reversed());
 
             System.out.println(estudantes);
-
-            //reverse com interface comparator
-
-            estudantes.sort((f,s) -> f.getNome().hashCode() - s.getNome().hashCode());
+            //sort com interface comparator
+            estudantes.sort(Comparator.comparingInt(Professor::hashCode));
 
             System.out.println(estudantes);
 

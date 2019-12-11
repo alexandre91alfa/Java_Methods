@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Professor implements Comparator {
 
@@ -20,5 +21,18 @@ public class Professor implements Comparator {
     @Override
     public String toString() {
         return "Nome='" + Nome;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Professor professor = (Professor) o;
+        return Objects.equals(Nome, professor.Nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Nome);
     }
 }
